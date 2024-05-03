@@ -2,6 +2,7 @@ const p = document.querySelector("#p");
 const btn = document.querySelector("#btn");
 const recipe = document.querySelector("#recipe");
 const form = document.querySelector("form");
+const allRecipes = document.querySelector(".allrecipes");
 
 const requestOptions = {
   method: "GET",
@@ -13,18 +14,19 @@ async function searchRecipe(e) {
   e.preventDefault();
   try {
     let dish = recipe.value;
-    dish = dish.replace(" ", "").trim().toLowerCase()
+    dish = dish.replace(" ", "").trim().toLowerCase();
     const response = await fetch(
       `https://api.spoonacular.com/recipes/autocomplete?number=7&query=${dish}&apiKey=c4c982d483af4172983db99440d7045c`,
       requestOptions
     );
-    const result = await response.json()
-    // console.log(result.id);    
-    for(const element in result) {
+    const result = await response.json();
+    // console.log(result.id);
+    for (const element in result) {
       console.log(element);
-      if(Object.values(result, element)){
-        const el = result[element]
+      if (Object.values(result, element)) {
+        const el = result[element];
         console.log(el.title);
+        allRecipes.innerHTML += `<a href="#" onClick="food(${el.id})">${el.title}</a> <br />`;
       }
     }
     console.log(result);
@@ -37,7 +39,7 @@ form.addEventListener("submit", searchRecipe);
 
 async function food(ID) {
   // Get Food Element by food ID /* ids */
-
+  console.log('Anchor Clicked');
   try {
     const response = await fetch(
       `https://api.spoonacular.com/recipes/informationBulk?ids=${ID}&apiKey=c4c982d483af4172983db99440d7045c`,
