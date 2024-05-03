@@ -1,15 +1,46 @@
 const p = document.querySelector("#p");
 const btn = document.querySelector("#btn");
+const recipe = document.querySelector("#recipe");
+const form = document.querySelector("form");
 
 const requestOptions = {
   method: "GET",
   redirect: "follow",
 };
 
-async function food() {
+async function searchRecipe(e) {
+  // AutoComplete API
+  e.preventDefault();
+  try {
+    let dish = recipe.value;
+    dish = dish.replace(" ", "").trim().toLowerCase()
+    const response = await fetch(
+      `https://api.spoonacular.com/recipes/autocomplete?number=7&query=${dish}&apiKey=c4c982d483af4172983db99440d7045c`,
+      requestOptions
+    );
+    const result = await response.json()
+    // console.log(result.id);    
+    for(const element in result) {
+      console.log(element);
+      if(Object.values(result, element)){
+        const el = result[element]
+        console.log(el.title);
+      }
+    }
+    console.log(result);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+form.addEventListener("submit", searchRecipe);
+
+async function food(ID) {
+  // Get Food Element by food ID /* ids */
+
   try {
     const response = await fetch(
-      "https://api.spoonacular.com/recipes/informationBulk?ids=654959&apiKey=c4c982d483af4172983db99440d7045c",
+      `https://api.spoonacular.com/recipes/informationBulk?ids=${ID}&apiKey=c4c982d483af4172983db99440d7045c`,
       requestOptions
     );
     const result = await response.json();
