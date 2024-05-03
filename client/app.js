@@ -1,5 +1,5 @@
 const p = document.querySelector("#p");
-const btn = document.querySelector("#btn");
+// const btn = document.querySelector("#btn");
 const recipe = document.querySelector("#recipe");
 const form = document.querySelector("form");
 const allRecipes = document.querySelector(".allrecipes");
@@ -83,4 +83,4 @@ async function food(ID) {
   }
 }
 
-btn.addEventListener("click", food);
+// btn.addEventListener("click", food);
