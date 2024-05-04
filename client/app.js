@@ -35,8 +35,6 @@ async function searchRecipe(e) {
   }
 }
 
-form.addEventListener("submit", searchRecipe);
-
 async function food(ID) {
   // Get Food Element by food ID /* ids */
   console.log('Anchor Clicked');
@@ -82,5 +80,7 @@ async function food(ID) {
     console.error(error);
   }
 }
+
+form.addEventListener("submit", searchRecipe);
 
 // btn.addEventListener("click", food);
