@@ -13,13 +13,15 @@ h3,
   color: white;
   text-decoration: none;
 }
-.main-title {
+.main-dish-info > div {
   font-size: 1.5em;
+  text-decoration: none;
+  color: black;
   margin: 0.51em;
   cursor: pointer;
 }
 .title {
-  font-size: 1.25em;
+  font-size: 1.2em;
   font-style: italic;
   margin: 0.35em;
   text-decoration: underline;
@@ -37,14 +39,14 @@ h3,
 }
 
 /* Searched */
-.rec-title{
+.rec-title {
   font-size: 1.2em;
   font-style: italic;
-  margin-top: .5em;
+  margin-top: 0.5em;
   text-decoration: underline;
   color: #3f72af;
+  cursor: pointer;
 }
-
 
 /* layout */
 .container {
@@ -172,8 +174,9 @@ h3,
 
 .rec-img {
   width: 90%;
-  border: 2px dashed #DDDDDD;
+  border: 2px dashed #dddddd;
   padding: 0.5em;
+  cursor: pointer;
 }
 .rec-img > img {
   width: 100%;
