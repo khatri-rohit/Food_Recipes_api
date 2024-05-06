@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #f6f5f2;
+  /* background-color: #f6f5f2; */
   font-family: "Roboto";
 }
 
@@ -49,13 +49,21 @@ h3,
   cursor: pointer;
 }
 
-/* recipe page */
-.ingredients{
-  display: flex;
-  flex-wrap: wrap;
-
+/* recipe */
+.recipe-ingredients > h3 {
+  font-size: 1.7em;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 1em 0;
+  color: #70c56d;
 }
-
+.instructions > h3 {
+  font-size: 1.7em;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 1em 0;
+  color: #70c56d;
+}
 
 /* Footer */
 .f-name {
@@ -206,6 +214,107 @@ i > a {
   width: 100%;
 }
 
+/* recipe page */
+.recipe-page {
+  border-top: 1px solid #bacd92;
+  margin: 1em 0;
+  padding: 1em 1em;
+  padding-top: 1.5em;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.recipe-details > * {
+  margin: 1em;
+}
+
+.recipe-title {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.recipe-img {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.recipe-details {
+  width: 60%;
+}
+
+.summary {
+  background-color: #dbdbdb;
+  padding: 1.5em;
+  margin: 1em 0;
+  padding-bottom: 0.1em;
+  font-size: 0.9em;
+}
+a {
+  text-decoration: none;
+}
+
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-end;
+  padding: 0;
+}
+.ingredients > * {
+  margin-right: 1em;
+  /* border: solid; */
+  margin-bottom: .5em;
+}
+.instructions > h3,
+.recipe-ingredients > h3 {
+  border-bottom: 1px solid #bacd92;
+}
+.ing-name {
+  margin: 1em 0;
+  font-size: .8em;
+}
+.steps > ol {
+  font-size: 1.1em;
+}
+li{
+  margin: 1.5em 0;
+}
+
+.similar-recipes {
+  width: 25%;
+}
+.similar-dish {
+  border-top: 3px dotted #e2e2e2;
+}
+.simi-dish {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1em 0;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #cfd0d1;
+  cursor: pointer;
+}
+.simi-dish:last-child {
+  border: none;
+}
+.simi-img {
+  /* border: solid; */
+  border: 2px dashed #e2e2e2;
+  width: 7vw;
+  margin-right: 0.2em;
+  padding: 0.25em;
+}
+.simi-img > img {
+  width: 100%;
+}
+.simi-title {
+  width: 70%;
+}
+
+/* Footer */
 footer {
   background-color: #7aba78;
   color: white;
@@ -253,20 +362,4 @@ a:first-child {
 }
 .contact > * {
   margin: 0;
-}
-
-/* recipe page */
-.recipe-page{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-}
-.recipe-page > * {
-  border: solid;
-}
-.recipe-details{
-  width: 60%;
-}
-.similar-recipes{
-  width: 25%;
 }

@@ -27,6 +27,7 @@ async function searchRecipe(e) {
         const el = result[element];
         console.log(el.title);
         allRecipes.innerHTML += `<a href="#" onClick="food(${el.id})">${el.title}</a> <br />`;
+        console.log(element);
       }
     }
     console.log(result);
