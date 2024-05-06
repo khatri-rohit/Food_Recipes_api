@@ -20,7 +20,8 @@ h3,
   margin: 0.51em;
   cursor: pointer;
 }
-.title,.p-title {
+.title,
+.p-title {
   font-size: 1.2em;
   font-style: italic;
   margin: 0.35em;
@@ -48,7 +49,25 @@ h3,
   cursor: pointer;
 }
 
-/* layout */
+/* Footer */
+.f-name {
+  font-size: 0.8em;
+  color: #cfd0d1;
+  margin: 0;
+}
+span > b {
+  font-style: italic;
+  text-shadow: #3f72af;
+}
+.contact > * {
+  font-size: 0.7em;
+  align-items: end;
+}
+i > a {
+  text-decoration: none;
+}
+
+/* LAYOUT */
 .navbar ul > * {
   /* border: solid; */
   margin: 0 0.51em;
@@ -177,4 +196,52 @@ h3,
 }
 .rec-img > img {
   width: 100%;
+}
+
+footer {
+  background-color: #7aba78;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.foot-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 2.5em;
+  border-bottom: 1.6px solid black;
+}
+.foot-container > * {
+  padding: 1em;
+}
+.section-1 > *,
+.section-2 > * {
+  margin: 0.5em 0;
+  cursor: pointer;
+}
+.follow {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+a {
+  margin-top: 1em;
+}
+a:first-child {
+  margin: 0;
+}
+.created {
+  height: 13vh;
+  padding: 1.5em;
+  padding-bottom: 0.5em;
+  background-color: black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.contact > * {
+  margin: 0;
 }
