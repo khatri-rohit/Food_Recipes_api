@@ -18,11 +18,17 @@ const requestOptions = {
     const result = await response.json();
 
     for (const key in result.recipes) {
-        if (Object.values(result.recipes, key)) {
-            const element = result.recipes[key];
-            console.log(element);
-            
-        }
+      if (Object.values(result.recipes, key)) {
+        const element = result.recipes[key];
+        const img = document.createElement("img");
+        img.src = `https://img.spoonacular.com/recipes/${element.id}-556x370.jpg?apiKey=c4c982d483af4172983db99440d7045c`;
+        img.alt = element.title;
+        img.title = element.title;
+        dishImg[key].appendChild(img);
+        title[key].innerHTML = element.title;
+        console.log(element.id);
+        console.log(element.title);
+      }
     }
 
     console.log(result.recipes);
