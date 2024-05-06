@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe</title>
     <!-- FAVICON -->
     <link rel="shortcut icon" href="./img/foodista.jpg" type="image/x-icon" />
@@ -19,129 +19,282 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <!-- NavBar -->
-        <div class="navbar-container">
-            <nav class="navbar navbar-expand-lg">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><h3>Foodista</h3></a>
-                <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                      <a class="nav-links" aria-current="page" href="index.html">
-                        Home
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-links" aria-current="page" href="index.html">
-                        About
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-links" aria-current="page" href="index.html">
-                        Blog
-                      </a>
-                    </li>
-                  </ul>
-                  <form
-                    id="form"
-                    action="search-recipe.html"
-                    class="d-flex"
-                    role="search"
-                    method="get"
-                  >
-                    <input
-                      class="form-control me-2"
-                      type="search"
-                      placeholder="Search"
-                      aria-label="Search"
-                    />
-                    <button class="btn btn-outline-success">Search</button>
-                  </form>
+      <!-- NavBar -->
+      <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><h3>Foodista</h3></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-links" aria-current="page" href="index.html">
+                    Home
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-links" aria-current="page" href="index.html">
+                    About
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-links" aria-current="page" href="index.html">
+                    Blog
+                  </a>
+                </li>
+              </ul>
+              <form
+                id="form"
+                action="search-recipe.html"
+                class="d-flex"
+                role="search"
+                method="get"
+              >
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-success">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="recipe-page">
+        <div class="recipe-details">
+          <div class="recipe-name">
+            <h2>Chicken Suya</h2>
+          </div>
+
+          <div class="recipe-img">
+            <img
+              src="https://img.spoonacular.com/recipes/716342-556x370.jpg"
+              alt="chicken suya"
+              title="Chicken Suya"
+            />
+          </div>
+
+          <div class="summary">
+            <p>
+              The recipe Chicken Suya can be made <b>in roughly 45 minutes</b>.
+              This recipe serves 1 and costs $1.67 per serving. One serving
+              contains <b>564 calories</b>, <b>44g of protein</b>, and
+              <b>35g of fat</b>. This recipe from Afrolems requires suya spice,
+              chicken, chilli powder, and seasoning cubes. It works well as a
+              main course. 56 people have made this recipe and would make it
+              again. It is a good option if you're following a
+              <b>gluten free, dairy free, whole 30, and ketogenic</b> diet.
+              Overall, this recipe earns a
+              <b>solid spoonacular score of 79%</b>. If you like this recipe,
+              you might also like recipes such as
+              <a
+                href="https://spoonacular.com/recipes/suya-nigerian-chicken-skewers-113497"
+                >Suya (Nigerian Chicken Skewers)</a
+              >,
+              <a href="https://spoonacular.com/recipes/suya-swordfish-6571"
+                >Suya Swordfish</a
+              >, and
+              <a
+                href="https://spoonacular.com/recipes/i-aint-chicken-chicken-crispy-roasted-chicken-breasts-with-orange-and-cardamom-1224321"
+                >I Ain't Chicken Chicken: Crispy Roasted Chicken Breasts with
+                Orange and Cardamom</a
+              >.
+            </p>
+          </div>
+
+          <div class="recipe-ingredients">
+            <h3>Ingredient</h3>
+            <div class="ingredients">
+              <div class="ingred">
+                <div class="ing-img">
+                  <img
+                    src="https://img.spoonacular.com/ingredients_100x100/seasoning.png"
+                    alt="seasoning"
+                  />
+                </div>
+                <div class="ing-name">Suya Spice</div>
+              </div>
+              <div class="ingred">
+                <div class="ing-img">
+                  <img
+                    src="https://img.spoonacular.com/ingredients_100x100/whole-chicken.jpg"
+                    alt="seasoning"
+                  />
+                </div>
+                <div class="ing-name">Chicken</div>
+              </div>
+              <div class="ingred">
+                <div class="ing-img">
+                  <img
+                    src="https://img.spoonacular.com/ingredients_100x100/chili-powder.jpg"
+                    alt="seasoning"
+                  />
+                </div>
+                <div class="ing-name">chilli powder</div>
+              </div>
+              <div class="ingred">
+                <div class="ing-img">
+                  <img
+                    src="https://img.spoonacular.com/ingredients_100x100/vegetable-oil.jpg"
+                    alt="seasoning"
+                  />
+                </div>
+                <div class="ing-name">cooking oil</div>
+              </div>
+              <div class="ingred">
+                <div class="ing-img">
+                  <img
+                    src="https://img.spoonacular.com/ingredients_100x100/diced-ham.jpg"
+                    alt="seasoning"
+                  />
+                </div>
+                <div class="ing-name">Seasoning cubes</div>
+              </div>
+              <div class="ingred">
+                <div class="ing-img">
+                  <img
+                    src="https://img.spoonacular.com/ingredients_100x100/brown-onion.png"
+                    alt="seasoning"
+                  />
+                </div>
+                <div class="ing-name">onion</div>
+              </div>
+              <div class="ingred">
+                <div class="ing-img">
+                  <img
+                    src="https://img.spoonacular.com/ingredients_100x100/salt.jpg"
+                    alt="seasoning"
+                  />
+                  <div class="ing-name">Salt</div>
                 </div>
               </div>
-            </nav>
+            </div>
           </div>
-    
-          <div class="recipe-page">
 
+          <div class="instructions">
+            <h3>Instructions</h3>
+            <div class="steps">
+              <ol>
+                <li>
+                  Heat the oven to 500 F.Wash and season the chicken with the
+                  Suya spice, chilli powder, seasoning cubes, salt and drizzle
+                  the oil over it.
+                </li>
+                <li>
+                  Place the chicken in the oven and grill for 40 minutes. Check
+                  the chicken occasionally and flip on both sides so it can cook
+                  properly.
+                </li>
+                <li>
+                  Serve hot garnished with the onions and tomato and a bit of
+                  suya spice sprinkled over the chicken.
+                </li>
+              </ol>
+            </div>
           </div>
+        </div>
+
+        <div class="similar-recipes">
+          <div class="side-bar">
+            <h3>Similar Recipes</h3>
+          </div>
+          <div class="similar-dish">
+            <div class="simi-dish">
+              <div class="simi-img">
+                <img
+                  src="https://img.spoonacular.com/recipes/716342-556x370.jpg"
+                  alt="Chicken Suya"
+                  title="Chicken Suya"
+                />
+              </div>
+              <div class="simi-title">
+                <div class="s-title">Chicken Suya</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <footer>
-        <div class="foot-container">
-          <div class="section-1">
-            <p>Home</p>
-            <p>About Us</p>
-            <p>Blog</p>
-            <p>Contact Us</p>
-          </div>
-  
-          <div class="section-2">
-            <p>Food Blog of Day</p>
-            <p>Wine Blog of the Day</p>
-            <p>User Guide</p>
-            <p>Advertorial</p>
-            <p>Advertise</p>
-          </div>
-  
-          <div class="follow">
-            <a href="#">
-              <i class="bi bi-instagram" style="color: rgb(250, 109, 219)"></i>
-            </a>
-            <a href="#">
-              <i class="bi bi-facebook" style="color: blue"></i>
-            </a>
-            <a href="#">
-              <i class="bi bi-twitter-x" style="color: black"></i>
-            </a>
-            <a href="#">
-              <i class="bi bi-pinterest" style="color: red"></i>
-            </a>
-            <a href="#">
-              <i class="bi bi-youtube" style="color: red"></i>
-            </a>
-          </div>
+      <div class="foot-container">
+        <div class="section-1">
+          <p>Home</p>
+          <p>About Us</p>
+          <p>Blog</p>
+          <p>Contact Us</p>
         </div>
-  
-        <div class="created">
-          <div class="f-name">
-            <p>
-              Made and Developed by
-              <span>
-                <b>Rohit Khatri</b>
-              </span>
-            </p>
-          </div>
-          <div class="contact">
-            <p>
-              <span>
-                <i class="bi bi-envelope">
-                  <a href="mailto:rohitkhatri111112@gmail.com">
-                    rohitkhatri111112@gmail.com
-                  </a>
-                </i>
-              </span>
-            </p>
-            <p>
-              <span>
-                <i class="bi bi-phone"><a href="tel:+91">6375519489</a></i>
-              </span>
-            </p>
-          </div>
+
+        <div class="section-2">
+          <p>Food Blog of Day</p>
+          <p>Wine Blog of the Day</p>
+          <p>User Guide</p>
+          <p>Advertorial</p>
+          <p>Advertise</p>
         </div>
-      </footer>
-</body>
+
+        <div class="follow">
+          <a href="#">
+            <i class="bi bi-instagram" style="color: rgb(250, 109, 219)"></i>
+          </a>
+          <a href="#">
+            <i class="bi bi-facebook" style="color: blue"></i>
+          </a>
+          <a href="#">
+            <i class="bi bi-twitter-x" style="color: black"></i>
+          </a>
+          <a href="#">
+            <i class="bi bi-pinterest" style="color: red"></i>
+          </a>
+          <a href="#">
+            <i class="bi bi-youtube" style="color: red"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="created">
+        <div class="f-name">
+          <p>
+            Made and Developed by
+            <span>
+              <b>Rohit Khatri</b>
+            </span>
+          </p>
+        </div>
+        <div class="contact">
+          <p>
+            <span>
+              <i class="bi bi-envelope">
+                <a href="mailto:rohitkhatri111112@gmail.com">
+                  rohitkhatri111112@gmail.com
+                </a>
+              </i>
+            </span>
+          </p>
+          <p>
+            <span>
+              <i class="bi bi-phone"><a href="tel:+91">6375519489</a></i>
+            </span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app3.js"></script>
+  </body>
 </html>

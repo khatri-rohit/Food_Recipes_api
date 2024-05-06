@@ -1,71 +1,86 @@
-const input = document.querySelector("input");
+const p = document.querySelector("#p");
+// const btn = document.querySelector("#btn");
+const recipe = document.querySelector("#recipe");
 const form = document.querySelector("form");
-//
-const dishImg = document.querySelectorAll(".dish-img");
-const title = document.querySelectorAll(".title");
-// 
-const popImg = document.querySelectorAll(".pop-img");
-const pTitle = document.querySelectorAll(".p-title");
+const allRecipes = document.querySelector(".allrecipes");
 
 const requestOptions = {
   method: "GET",
   redirect: "follow",
 };
 
-// (async () => {
-//   try {
-//     // Home Page Left
-//     const response1 = await fetch(
-//       "https://api.spoonacular.com/recipes/random?number=7&include-tags=vegetarian&apiKey=c4c982d483af4172983db99440d7045c",
-//       requestOptions
-//     );
-//     const result1 = await response1.json();
-//     for (const key in result1.recipes) {
-//       if (Object.values(result1.recipes, key)) {
-//         const element = result1.recipes[key];
-//         const img = document.createElement("img");
-//         img.src = `https://img.spoonacular.com/recipes/${element.id}-556x370.jpg?apiKey=c4c982d483af4172983db99440d7045c`;
-//         img.alt = element.title;
-//         img.title = element.title;
-//         dishImg[key].appendChild(img);
-//         title[key].innerHTML = element.title;
-//         console.log(element.id);
-//         console.log(element.title);
-//       }
-//     }
-//     console.log(result1.recipes);
+async function searchRecipe(e) {
+  // AutoComplete API
+  e.preventDefault();
+  try {
+    let dish = recipe.value;
+    dish = dish.replace(" ", "").trim().toLowerCase();
+    const response = await fetch(
+      `https://api.spoonacular.com/recipes/autocomplete?number=7&query=${dish}&apiKey=c4c982d483af4172983db99440d7045c`,
+      requestOptions
+    );
+    const result = await response.json();
+    // console.log(result.id);
+    for (const element in result) {
+      console.log(element);
+      if (Object.values(result, element)) {
+        const el = result[element];
+        console.log(el.title);
+        allRecipes.innerHTML += `<a href="#" onClick="food(${el.id})">${el.title}</a> <br />`;
+      }
+    }
+    console.log(result);
+  } catch (err) {
+    console.log(err);
+  }
+}
 
-//     // Home Page Right
-//     const response2 = await fetch(
-//       "https://api.spoonacular.com/recipes/random?number=7&include-tags=vegetarian&apiKey=c4c982d483af4172983db99440d7045c",
-//       requestOptions
-//     );
-//     const result2 = await response2.json();
-//     for (const key in result2.recipes) {
-//       if (Object.values(result2.recipes, key)) {
-//         const element = result2.recipes[key];
-//         const img = document.createElement("img");
-//         img.src = `https://img.spoonacular.com/recipes/${element.id}-556x370.jpg?apiKey=c4c982d483af4172983db99440d7045c`;
-//         img.alt = element.title;
-//         img.title = element.title;
-//         popImg[key].appendChild(img);
-//         pTitle[key].innerHTML = element.title;
-//         console.log(element.id);
-//         console.log(element.title);
-//       }
-//     }
-//     console.log(result2.recipes);
+async function food(ID) {
+  // Get Food Element by food ID /* ids */
+  console.log('Anchor Clicked');
+  try {
+    const response = await fetch(
+      `https://api.spoonacular.com/recipes/informationBulk?ids=${ID}&apiKey=c4c982d483af4172983db99440d7045c`,
+      requestOptions
+    );
+    const result = await response.json();
+    // console.log(result);
+    p.innerHTML += `Food Recipe and Ingredients<br/> <h3> Steps <h3> <ol> `;
+    let temp_response = "";
+    let data = result[0].analyzedInstructions[0].steps;
+    // console.log(typeof data);
+    for (const element in data) {
+      if (Object.values(data, element)) {
+        const ele = data[element];
+        p.innerHTML += `<li> ${ele.step} </li>`;
+        console.log(ele.step);
+        // temp_response = ele
+      }
+    }
+    p.innerHTML += ` </ol> <br />`;
 
-    
+    console.log(data);
 
+    p.innerHTML += ` <h3> Ingredients <h3> <ol> `;
 
+    data = result[0].extendedIngredients;
 
-//   } catch (error) {
-//     console.error(error);
-//   }
-// })();
+    for (const element in data) {
+      if (Object.values(data, element)) {
+        const ele = data[element];
+        p.innerHTML += `<li> ${ele.original} </li>`;
+        console.log(ele.original);
+      }
+    }
 
-form.addEventListener("submit", () => {
-  const val = input.value;
-  localStorage.setItem("query", val.replace(" ", "").trim().toLowerCase());
-});
+    p.innerHTML += ` </ol> <br />`;
+    // console.log(temp_response.step);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+form.addEventListener("submit", searchRecipe);
+
+// btn.addEventListener("click", food);
