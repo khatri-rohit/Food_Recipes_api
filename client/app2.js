@@ -29,10 +29,8 @@ const requestOptions = {
         recipeImage[key].appendChild(img);
         recipeName[key].innerHTML = el.title;
         recipeImage[key].parentElement.setAttribute("id", `${el.id}`);
-        console.log(recipeImage[key].parentElement);
       }
     }
-    console.log(result);
   } catch (error) {
     console.error(error);
   }
@@ -41,13 +39,10 @@ const requestOptions = {
 recipe.forEach((rec) => {
   rec.addEventListener("click", () => {
     localStorage.setItem('foodId',rec.getAttribute('id'))
-    console.log("Id Save To LocalStorage");
-    console.log(rec.getAttribute("id"));
     window.location = '../Food_Recipes_api/recipe.html'
   });
 });
 
-console.log(localStorage.getItem("query"));
 
 form.addEventListener("submit", () => {
   const val = input.value;

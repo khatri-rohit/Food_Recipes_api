@@ -33,11 +33,8 @@ const requestOptions = {
         title[key].innerHTML = element.title;
         dishImg[key].parentElement.setAttribute('id',`${element.id}`)
         console.log(dishImg[key].parentElement);
-        console.log(element.id);
-        console.log(element.title);
       }
     }
-    console.log(result1.recipes);
 
     // Home Page Right
     const response2 = await fetch(
@@ -55,12 +52,8 @@ const requestOptions = {
         popImg[key].appendChild(img);
         pTitle[key].innerHTML = element.title;
         popImg[key].parentElement.setAttribute('id',`${element.id}`)
-        console.log(popImg[key].parentElement);
-        console.log(element.id);
-        console.log(element.title);
       }
     }
-    console.log(result2.recipes);
 
   } catch (error) {
     console.error(error);
@@ -71,8 +64,6 @@ const requestOptions = {
 dish.forEach((dis) => {
   dis.addEventListener("click", () => {
     localStorage.setItem('foodId',dis.getAttribute('id'))
-    console.log("Id Save To LocalStorage");
-    console.log(dis.getAttribute("id"));
     window.location = '../Food_Recipes_api/recipe.html'
   });
 });
@@ -80,8 +71,6 @@ dish.forEach((dis) => {
 popDish.forEach((pop) => {
   pop.addEventListener("click", () => {
     localStorage.setItem('foodId',pop.getAttribute('id'))
-    console.log("Id Save To LocalStorage");
-    console.log(pop.getAttribute("id"));
     window.location = '../Food_Recipes_api/recipe.html'
   });
 });

@@ -11,7 +11,6 @@ const list = document.querySelector("ol");
 const similarDishs = document.querySelector(".similar-dish");
 
 const ID = localStorage.getItem("foodId");
-console.log(ID);
 // localStorage.clear()
 const requestOptions = {
   method: "GET",
@@ -101,12 +100,9 @@ const requestOptions = {
       name[i].innerText = similarRecipes[i].title;
     }
     const similarDish = document.querySelectorAll(".simi-dish");
-    console.log(similarDish);
     similarDish.forEach((recip) => {
       recip.addEventListener("click", () => {
         localStorage.setItem("foodId", recip.getAttribute("id"));
-        console.log("Id Save To LocalStorage");
-        console.log(recip.getAttribute("id"));
         window.location = "../Food_Recipes_api/recipe.html";
       });
     });
