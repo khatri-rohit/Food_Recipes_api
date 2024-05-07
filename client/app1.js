@@ -41,7 +41,7 @@ const requestOptions = {
 
     // Home Page Right
     const response2 = await fetch(
-      "https://api.spoonacular.com/recipes/random?number=7&include-tags=vegetarian&apiKey=c4c982d483af4172983db99440d7045c",
+      "https://api.spoonacular.com/recipes/random?number=9&include-tags=vegetarian&apiKey=c4c982d483af4172983db99440d7045c",
       requestOptions
     );
     const result2 = await response2.json();
