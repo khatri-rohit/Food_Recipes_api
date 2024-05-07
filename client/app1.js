@@ -18,7 +18,7 @@ const requestOptions = {
   try {
     // Home Page Left
     const response1 = await fetch(
-      "https://api.spoonacular.com/recipes/random?number=7&include-tags=vegetarian&apiKey=c4c982d483af4172983db99440d7045c",
+      "https://api.spoonacular.com/recipes/random?number=7&include-tags=vegetarian&apiKey=32c5ffce39e64e37aa6da7c7caae44ad",
       requestOptions
     );
     const result1 = await response1.json();
@@ -26,19 +26,18 @@ const requestOptions = {
       if (Object.values(result1.recipes, key)) {
         const element = result1.recipes[key];
         const img = document.createElement("img");
-        img.src = `https://img.spoonacular.com/recipes/${element.id}-556x370.jpg?apiKey=c4c982d483af4172983db99440d7045c`;
+        img.src = `https://img.spoonacular.com/recipes/${element.id}-556x370.jpg?apiKey=32c5ffce39e64e37aa6da7c7caae44ad`;
         img.alt = element.title;
         img.title = element.title;
         dishImg[key].appendChild(img);
         title[key].innerHTML = element.title;
         dishImg[key].parentElement.setAttribute('id',`${element.id}`)
-        console.log(dishImg[key].parentElement);
       }
     }
 
     // Home Page Right
     const response2 = await fetch(
-      "https://api.spoonacular.com/recipes/random?number=9&include-tags=vegetarian&apiKey=c4c982d483af4172983db99440d7045c",
+      "https://api.spoonacular.com/recipes/random?number=9&include-tags=vegetarian&apiKey=32c5ffce39e64e37aa6da7c7caae44ad",
       requestOptions
     );
     const result2 = await response2.json();
@@ -46,12 +45,13 @@ const requestOptions = {
       if (Object.values(result2.recipes, key)) {
         const element = await result2.recipes[key];
         const img = document.createElement("img");
-        img.src = `https://img.spoonacular.com/recipes/${element.id}-556x370.jpg?apiKey=c4c982d483af4172983db99440d7045c`;
+        img.src = `https://img.spoonacular.com/recipes/${element.id}-556x370.jpg?apiKey=32c5ffce39e64e37aa6da7c7caae44ad`;
         img.alt = element.title;
         img.title = element.title;
         popImg[key].appendChild(img);
         pTitle[key].innerHTML = element.title;
         popImg[key].parentElement.setAttribute('id',`${element.id}`)
+        console.log(element);
       }
     }
 

@@ -21,7 +21,7 @@ const requestOptions = {
   try {
     // Fetch Information In Bulk API
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/informationBulk?ids=${ID}&apiKey=c4c982d483af4172983db99440d7045c`,
+      `https://api.spoonacular.com/recipes/informationBulk?ids=${ID}&apiKey=32c5ffce39e64e37aa6da7c7caae44ad`,
       requestOptions
     );
     const result = await response.json();
@@ -71,7 +71,7 @@ const requestOptions = {
     }
 
     const similarFood = await fetch(
-      `https://api.spoonacular.com/recipes/${ID}/similar?apiKey=c4c982d483af4172983db99440d7045c`,
+      `https://api.spoonacular.com/recipes/${ID}/similar?apiKey=32c5ffce39e64e37aa6da7c7caae44ad`,
       requestOptions
     );
     const similarRecipes = await similarFood.json();

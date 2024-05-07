@@ -15,7 +15,7 @@ const requestOptions = {
 (async () => {
   try {
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/autocomplete?number=15&query=${element}&apiKey=c4c982d483af4172983db99440d7045c`,
+      `https://api.spoonacular.com/recipes/autocomplete?number=15&query=${element}&apiKey=32c5ffce39e64e37aa6da7c7caae44ad`,
       requestOptions
     );
     const result = await response.json();
@@ -23,7 +23,7 @@ const requestOptions = {
       if (Object.values(result, key)) {
         const el = await result[key];
         const img = document.createElement("img");
-        img.src = `https://img.spoonacular.com/recipes/${el.id}-556x370.jpg?apiKey=c4c982d483af4172983db99440d7045c`;
+        img.src = `https://img.spoonacular.com/recipes/${el.id}-556x370.jpg?apiKey=32c5ffce39e64e37aa6da7c7caae44ad`;
         img.alt = el.title;
         img.title = el.title;
         recipeImage[key].appendChild(img);
